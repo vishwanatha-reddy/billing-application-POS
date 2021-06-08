@@ -6,6 +6,15 @@ It is a web application primarily designed for desktop access, for managing bill
 
 Application Demo (Live link): https://billing-application-pos.herokuapp.com/
 
+Users can login to the application using the credentials specified in the Home page.
+
+![image](https://user-images.githubusercontent.com/84494799/121147828-dc186780-c85e-11eb-9313-e93e697fc367.png)
+
+Login page:
+
+![image](https://user-images.githubusercontent.com/84494799/121147930-f4888200-c85e-11eb-952b-68ca19c6bcec.png)
+
+
 Features:
 
 1. Adding Products:
@@ -46,5 +55,9 @@ Edit Customer details:
  ![image](https://user-images.githubusercontent.com/84494799/121146973-133a4900-c85e-11eb-8724-d792c0b2dccb.png)
 
 ![image](https://user-images.githubusercontent.com/84494799/121147140-3c5ad980-c85e-11eb-8cbe-f704d057516e.png)
+
+4. Users will be able to track statistics like total volume of revenue generated, total bills, total number of customers and products present in the database from the dashboard page.
+
+![image](https://user-images.githubusercontent.com/84494799/121147633-aa070580-c85e-11eb-8aa0-375cd218f215.png)
 
 
