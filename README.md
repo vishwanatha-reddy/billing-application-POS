@@ -1,6 +1,6 @@
-                                                        Project Overview
+                                                        #Project Overview
 
-Title: POS - Billing application
+##Title: POS - Billing application
 
 It is a web application primarily designed for desktop access, for managing billing and sales of any offline / online store.
 
@@ -10,14 +10,14 @@ Users can login to the application using the credentials specified in the Home p
 
 ![image](https://user-images.githubusercontent.com/84494799/121147828-dc186780-c85e-11eb-9313-e93e697fc367.png)
 
-Login page:
+##Login page:
 
 ![image](https://user-images.githubusercontent.com/84494799/121147930-f4888200-c85e-11eb-952b-68ca19c6bcec.png)
 
 
-Features:
+##Features:
 
-1. Adding Products:
+##1. Adding Products:
 
 Users will be able to add new products to their inventory, edit product details at any given point of time.
 
