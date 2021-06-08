@@ -1,0 +1,63 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.basic{
+    border:1px dashed blue;
+    height: 12rem;
+    width:20rem;
+    display:inline-block;
+    margin:2rem;
+     
+    }
+
+.date-label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+    
+}
+
+.cardPosition{
+    z-index:-1;
+    /* margin-left:300px; */
+}
+
+.date-input,
+.date-label {
+    margin: .4rem 0;
+}
+
+.remove-button{
+  color:#333;
+  background-color:#FC4445
+}
+
+.view-bill-btn{
+    background-color:#FFCB9A;
+}
+
+.edit-btn{
+    background-color:#FAED26;
+}
+
+.save-btn{
+    background-color:#53900F;
+    color:#fff;
+}
+
+/*to always dispaly the arrows in input type number*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
+}
+
+#list {
+            overflow-y: scroll;
+            max-height: 30vh;
+            max-width:70rem;
+        }
