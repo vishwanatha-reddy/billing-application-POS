@@ -67,6 +67,7 @@ Redux (state management).
 JavaScript.
 BootStrap (styling CSS framework).
 Backend APIs setuo using Node & Express JS.
+Heorku (for hosting).
 
 Third party NPM Packages used in the application for implementing different functionalities:
 
@@ -82,5 +83,5 @@ Third party NPM Packages used in the application for implementing different func
 10.	moment.
 11. react-router-dom.
 
-Thanks for reading till here, hope you liked the project. :)
+Thanks for reading till the end, hope you liked the project. :)
 
