@@ -63,10 +63,15 @@ Edit Customer details:
 Teck stack used for building the application:
 
 React JS (view library).
+
 Redux (state management).
+
 JavaScript.
+
 BootStrap (styling CSS framework).
+
 Backend APIs setuo using Node & Express JS.
+
 Heorku (for hosting).
 
 Third party NPM Packages used in the application for implementing different functionalities:
