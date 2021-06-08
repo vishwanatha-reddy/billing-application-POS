@@ -87,5 +87,5 @@ Heorku (for hosting).
 10.	moment.
 11. react-router-dom.
 
-Thanks for reading till the end, hope you liked the project. :)
+Thanks for reading till the end, hope you like it!!  :)
 
