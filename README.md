@@ -4,6 +4,8 @@ Title: POS - Billing application
 
 It is a web application primarily designed for desktop access, for managing billing and sales of any offline / online store.
 
+Application Demo (Live link): https://billing-application-pos.herokuapp.com/
+
 Features:
 
 1. Adding Products:
@@ -27,4 +29,22 @@ Edit Customer details:
 
 3. Generate Bills:
 
+    a. Users will be able to generate bills, by selecting the different customers and products details whose details were entered earlier.
+
 ![image](https://user-images.githubusercontent.com/84494799/121145155-47ad0580-c85c-11eb-9b7e-c81debeb31e3.png)
+
+    b. Users will be able to add a new customer even from the billing application page.
+    
+![image](https://user-images.githubusercontent.com/84494799/121146112-4203ef80-c85d-11eb-8c89-ba69f0eded0d.png)
+
+    c. A seperate cart item will be enabled to calculate the total bill value, and then checkout as seen below.
+    
+ ![image](https://user-images.githubusercontent.com/84494799/121146775-e38b4100-c85d-11eb-944c-537ea14ddbe8.png)
+
+    d. Once checkout is completed users will be able to, view and download their bills in a pdf format.
+    
+ ![image](https://user-images.githubusercontent.com/84494799/121146973-133a4900-c85e-11eb-8724-d792c0b2dccb.png)
+
+![image](https://user-images.githubusercontent.com/84494799/121147140-3c5ad980-c85e-11eb-8cbe-f704d057516e.png)
+
+
