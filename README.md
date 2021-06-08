@@ -60,4 +60,27 @@ Edit Customer details:
 
 ![image](https://user-images.githubusercontent.com/84494799/121147633-aa070580-c85e-11eb-8aa0-375cd218f215.png)
 
+Teck stack used for building the application:
+
+React JS (view library).
+Redux (state management).
+JavaScript.
+BootStrap (styling CSS framework).
+Backend APIs setuo using Node & Express JS.
+
+Third party NPM Packages used in the application for implementing different functionalities:
+
+1.	react-redux.
+2.	react-select.
+3.	sweetalert.
+4.	date-fns.
+5.	reactstrap. 
+6.	validator.
+7.	react-icons. 
+8.	axios.
+9.	react-html2pdf.
+10.	moment.
+11. react-router-dom.
+
+Thanks for reading till here, hope you liked the project. :)
 
