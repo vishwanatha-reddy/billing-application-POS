@@ -15,7 +15,7 @@ const TotalSales=(props)=> {
                 Total Sales
             </div>
             <div className="card-body">
-                     <h3>{salesVolume}</h3> 
+                    <h3>  <i className="fa fa-rupee" style={{fontSize:'28px'}}></i> {salesVolume}</h3> 
             </div>
         </div>
         )

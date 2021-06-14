@@ -27,7 +27,6 @@ export const asyncLoginUser=(formData,handleHomeRedirect)=>{
                     console.log('successfully logged in ');
                     localStorage.setItem('token',result.token);
                     handleHomeRedirect();
-                    // history.push('/dashboard');
                 }
             })
             .catch((err)=>{
@@ -36,6 +35,7 @@ export const asyncLoginUser=(formData,handleHomeRedirect)=>{
     }
 }
 
+ 
     
 
  export const setUsers=(users)=>{

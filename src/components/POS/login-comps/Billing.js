@@ -5,6 +5,8 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import moment from 'moment';
 import swal from 'sweetalert'
 
+
+
 import '../dashboard-comps/dash-comps.css'
 import BillItem from '../../../edit-form/BillItem'
 import { setLineItems } from '../../../actions/lineItemsAction';
@@ -19,11 +21,13 @@ import { startCreateCustomer } from '../../../actions/customersAction'
 
 
 const Billing = (props) => {
+
     const [date, setDate] = useState('');
     const [product, setProduct] = useState('');
     const [customer, setCustomer] = useState('');
     const [quantity, setQuantity] = useState('');
     const [toggle, setToggle] = useState(false);
+    const [searchTable, setSearchTable] = useState('');
 
     //for new cust add
     const [custName, setCustName] = useState('');
@@ -37,6 +41,8 @@ const Billing = (props) => {
         dispatch(startProductsList());
         dispatch(startBillsList());
     }, []);
+
+
 
     const productsData = useSelector((store) => {
         return store.products
@@ -69,6 +75,14 @@ const Billing = (props) => {
         }
     })
 
+    const quantityOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num, i) => {
+        return {
+            value: num,
+            label: i + 1
+        }
+    });
+
+
     const handleChange = (e) => {
         if (e.target.name === 'date') {
             setDate(e.target.value)
@@ -88,6 +102,12 @@ const Billing = (props) => {
     const handleQuantityChange = (value) => {
         console.log(value);
         setQuantity(value.value)
+    }
+    const clearFields = () => {
+        setDate('');
+        setCustomer('');
+        setProduct('');
+        setQuantity('');
     }
 
     let billData = {
@@ -250,7 +270,7 @@ const Billing = (props) => {
         return value;
     }
 
-    //other way to get bill total, apply below to cartData and productsData arrays. 
+    //other way to get bill total, appy below to cartData and productsData arrays. 
     // const obj1=[
     //     {
     //         prod:2,
@@ -358,6 +378,27 @@ const Billing = (props) => {
         });
 
         dispatch(startCustomerList());
+    }
+
+    const handleSearchTable = (e) => {
+        setSearchTable(e.target.value);
+    }
+
+    console.log(billsData);
+
+    //filtering bills data
+    const filteredBills = () => {
+        let dateBills = '';
+        let totalBills = '';
+        if (searchTable.includes("-")) {
+            return dateBills = billsData.filter((bill) => {
+                return bill.date.includes(searchTable);
+            })
+        } else {
+            return totalBills = billsData.filter((bill) => {
+                return String(bill.total).includes(searchTable);
+            })
+        }
 
     }
     return (
@@ -449,18 +490,18 @@ const Billing = (props) => {
                 </div>
             </div>
             {/* cart item*/}
-            { cartData.length > 0 && <>
+            {cartData.length > 0 && <>
                 <div className="row">
-                    <div className="col-md-10 text-center   mt-2" id="list">
+                    <div className="col-md-10 text-center mt-2" >
 
-                        <table className="table  shadow-lg table-striped rounded border border-dark " style={{ marginLeft: '10rem', width: '48rem', backgroundColor: '#AFD275' }}>
+                        <table className="table  shadow-lg table-striped rounded border border-dark " id="list" style={{ marginLeft: '10rem', width: '48rem', backgroundColor: '#AFD275' }}>
                             <thead>
                                 <tr>
-                                    <th scope="col">Product Name</th>
-                                    <th scope="col"> Price </th>
-                                    <th scope="col"> Quantity</th>
-                                    <th scope="col">Sub Total</th>
-                                    <th scope="col">Remove item</th>
+                                    <th  scope="col">Product Name</th>
+                                    <th  scope="col"> Price </th>
+                                    <th  scope="col"> Quantity</th>
+                                    <th  scope="col">Sub Total</th>
+                                    <th  scope="col">Remove item</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -486,12 +527,20 @@ const Billing = (props) => {
                 </div>
             </>
             }
+            <hr style={{ marginLeft: '10rem', width: '48rem' }} />
+            <div className="row">
+                <div className="col-md-6  d-none d-md-block offset-3 ">
+                    <form className="form-group d-flex r">
+                        <input type="text" className="form-control shadow-lg" value={searchTable} onChange={handleSearchTable} placeholder="search bills by Bill Date / Bill Total" />
+                    </form>
+                </div>
+            </div>
 
 
             {/*bills listing*/}
             <div className="row">
 
-                <div className="col-md-10" id="list">
+                <div className="col-md-10 d-none d-md-block" id="list">
                     <hr style={{ marginLeft: '10rem', width: '48rem' }} />
                     {billsData.length > 0 ? (
 
@@ -507,7 +556,7 @@ const Billing = (props) => {
                             </thead>
                             <tbody>
                                 {
-                                    billsData.map((bill) => {
+                                    filteredBills().map((bill) => {
                                         return <BillItem bill={bill} findCustEmail={findCustEmail} handleDelete={handleDelete} findCustomer={findCustomer} billsData={billsData} productsData={productsData} key={bill._id} />
                                     })
                                 }
@@ -516,7 +565,7 @@ const Billing = (props) => {
 
                     ) : (
                         <div className="col-md-10">
-                            <h2 style={{ marginLeft: '28rem' }} >No Bills found</h2>
+                            <h2 style={{ marginLeft: '28rem' }} >No Bills found, make a purchase!!</h2>
                         </div>
                     )
                     }

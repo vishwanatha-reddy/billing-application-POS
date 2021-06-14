@@ -1,124 +1,133 @@
-import axios from 'axios'
+ import axios from 'axios'
 
-//list all products
-export const startProductsList = () => {
-    const token = localStorage.getItem('token');
-    return (dispatch) => {
-
-        axios.get('https://dct-billing-app.herokuapp.com/api/products', { headers: { "Authorization": `Bearer ${token}` } })
-            .then((res) => {
-                const result = res.data;
+ //list all products
+export const startProductsList=()=>{
+    const token=localStorage.getItem('token');
+    return (dispatch)=>{
+         
+            axios.get('https://dct-billing-app.herokuapp.com/api/products',{headers:{"Authorization" : `Bearer ${token}`}} )
+            .then((res)=>{
+                const result=res.data;
                 //your formData object data will be converted to JSON stringify format automatically by axios
-                if (result.hasOwnProperty('errors')) {
+                if(result.hasOwnProperty('errors')){
                     console.log(result.message)
-                } else {
+                }else{
                     // alert('successfully registered');
                     dispatch(setProductsList(result))
-
+                    
                     // console.log(result,'user info action');
                     // handleLoginRedirect();
-
+                   
                 }
             })
-            .catch((err) => {
+            .catch((err)=>{
                 console.log(err);
             })
+         
     }
 }
 
 
-export const setProductsList = (list) => {
-    return {
-        type: 'PRODUCTS_LIST',
-        payload: list
-    }
-}
+export const setProductsList=(list)=>{
+     return {
+         type:'PRODUCTS_LIST',
+         payload:list
+     }
+ }
 
 //create a product
-export const startCreateProduct = (customerInfo) => {
-    const token = localStorage.getItem('token');
-    return (dispatch) => {
-        axios.post('https://dct-billing-app.herokuapp.com/api/products', customerInfo, { headers: { "Authorization": `Bearer ${token}` } })
-            .then((res) => {
-                const result = res.data;
+export const startCreateProduct=(customerInfo)=>{
+    const token=localStorage.getItem('token');
+    return (dispatch)=>{
+         
+            axios.post('https://dct-billing-app.herokuapp.com/api/products',customerInfo,{headers:{"Authorization" : `Bearer ${token}`}} )
+            .then((res)=>{
+                const result=res.data;
                 //your formData object data will be converted to JSON stringify format automatically by axios
-                if (result.hasOwnProperty('errors')) {
+                if(result.hasOwnProperty('errors')){
                     console.log(result.message)
-                } else {
+                }else{
                     // alert('successfully registered');
                     dispatch(setCreateProduct(result))
-                    console.log(result, 'created product');
+                    console.log(result,'created product');
                     // handleLoginRedirect();
                 }
             })
-            .catch((err) => {
+            .catch((err)=>{
                 console.log(err);
             })
-
+        
     }
 }
 
-export const setCreateProduct = (createdProduct) => {
+export const setCreateProduct=(createdProduct)=>{
     return {
-        type: 'ADD_PRODUCT',
-        payload: createdProduct
+        type:'ADD_PRODUCT',
+        payload:createdProduct
     }
 }
 
 //update product
-export const startUpdateProduct = (productInfo, id) => {
-    const token = localStorage.getItem('token');
-    return (dispatch) => {
-        axios.put(`https://dct-billing-app.herokuapp.com/api/products/${id}`, productInfo, { headers: { "Authorization": `Bearer ${token}` } })
-            .then((res) => {
-                const result = res.data;
+export const startUpdateProduct=(productInfo,id)=>{
+    const token=localStorage.getItem('token');
+    return (dispatch)=>{
+         
+            axios.put(`https://dct-billing-app.herokuapp.com/api/products/${id}`,productInfo,{headers:{"Authorization" : `Bearer ${token}`}} )
+            .then((res)=>{
+                const result=res.data;
                 //your formData object data will be converted to JSON stringify format automatically by axios
-                if (result.hasOwnProperty('errors')) {
+                if(result.hasOwnProperty('errors')){
                     console.log(result.message)
-                } else {
+                }else{
                     dispatch(setUpdateProduct(result))
                     // dispatch(startProductsList());
-                    console.log(result, 'updated product');
+                    console.log(result,'updated product');
                 }
             })
-            .catch((err) => {
+            .catch((err)=>{
                 console.log(err);
             })
-
+        
     }
 }
 
-export const setUpdateProduct = (updatedProduct) => {
+export const setUpdateProduct=(updatedProduct)=>{
     return {
-        type: 'UPDATE_PRODUCT',
-        payload: updatedProduct
+        type:'UPDATE_PRODUCT',
+        payload:updatedProduct
     }
 }
 
 //delete a product
-export const asyncDeleteProduct = (id) => {
-    const token = localStorage.getItem('token');
-    return (dispatch) => {
-        axios.delete(`https://dct-billing-app.herokuapp.com/api/products/${id}`, { headers: { "Authorization": `Bearer ${token}` } })
-            .then((res) => {
-                const result = res.data;
+export const asyncDeleteProduct=(id)=>{
+    const token=localStorage.getItem('token');
+    return (dispatch)=>{
+            axios.delete(`https://dct-billing-app.herokuapp.com/api/products/${id}`,{headers:{"Authorization" : `Bearer ${token}`}} )
+            .then((res)=>{
+                const result=res.data;
                 //your formData object data will be converted to JSON stringify format automatically by axios
-                if (result.hasOwnProperty('errors')) {
+                if(result.hasOwnProperty('errors')){
                     console.log(result.message)
-                } else {
+                }else{
                     dispatch(setDeleteProduct(result));
+                    // alert('successfully registered');
+                    // dispatch(setDeleteCustomer(result))
+                    // console.log(result,'user info action');
+                    // handleLoginRedirect();
+                    // dispatch(startProductsList());
+                    
                 }
             })
-            .catch((err) => {
+            .catch((err)=>{
                 console.log(err);
             })
-
+         
     }
 }
 
-export const setDeleteProduct = (result) => {
+export const setDeleteProduct=(result)=>{
     return {
-        type: 'DELETE_PRODUCT',
-        payload: result
+        type:'DELETE_PRODUCT',
+        payload:result
     }
 }

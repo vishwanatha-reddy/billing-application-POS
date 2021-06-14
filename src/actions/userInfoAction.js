@@ -16,6 +16,7 @@ export const asyncUserInfo=()=>{
                     dispatch(setUserInfo(result))
                     // console.log(result,'user info action');
                     // handleLoginRedirect();
+                   
                 }
             })
             .catch((err)=>{
