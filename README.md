@@ -6,6 +6,11 @@ Billing Application (POS) is a React-Redux web application built for Desktop fir
 
 Application Demo (live link): https://billing-application-POS.herokuapp.com/
 
+Plesae use the credentials provided on the Home page to login to the application.
+
+![image](https://user-images.githubusercontent.com/84494799/121934778-5bc59b00-cd65-11eb-9195-34f5bf3976bc.png)
+
+
 ### Features:
 
 ### 1. Adding Movie:
