@@ -1,91 +1,70 @@
- # Project Overview
+# Getting Started with Create React App
 
-## Title: POS - Billing application
- 
-It is a web application primarily designed for desktop access, for managing billing and sales of any offline / online store.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Application Demo (Live link): https://billing-application-pos.herokuapp.com/
+## Available Scripts
 
-Users can login to the application using the credentials specified in the Home page.
+In the project directory, you can run:
 
-![image](https://user-images.githubusercontent.com/84494799/121147828-dc186780-c85e-11eb-9313-e93e697fc367.png)
+### `npm start`
 
-## Login page:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![image](https://user-images.githubusercontent.com/84494799/121147930-f4888200-c85e-11eb-952b-68ca19c6bcec.png)
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Features:
+### `npm test`
 
-### 1. Adding Products:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Users will be able to add new products to their inventory, edit product details at any given point of time.
+### `npm run build`
 
-![image](https://user-images.githubusercontent.com/84494799/121143120-51356e00-c85a-11eb-917e-bff36c871c08.png)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Edit product details:
-![image](https://user-images.githubusercontent.com/84494799/121144258-724a8e80-c85b-11eb-9705-a69f6a8747c3.png)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### 2. Adding Customers: 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Users will be able to add new customers to the database, edit customer details at any given point of time.
+### `npm run eject`
 
-![image](https://user-images.githubusercontent.com/84494799/121144485-aa51d180-c85b-11eb-8041-a53be6a530b9.png)
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### Edit Customer details:
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-![image](https://user-images.githubusercontent.com/84494799/121144682-da997000-c85b-11eb-98a6-c6a49cb0298e.png)
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### 3. Generate Bills:
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-    a. Users will be able to generate bills, by selecting the different customers and products details whose details were entered earlier.
+## Learn More
 
-![image](https://user-images.githubusercontent.com/84494799/121145155-47ad0580-c85c-11eb-9b7e-c81debeb31e3.png)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-    b. Users will be able to add a new customer even from the billing application page.
-    
-![image](https://user-images.githubusercontent.com/84494799/121146112-4203ef80-c85d-11eb-8c89-ba69f0eded0d.png)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-    c. A seperate cart item will be enabled to calculate the total bill value, and then checkout as seen below.
-    
- ![image](https://user-images.githubusercontent.com/84494799/121146775-e38b4100-c85d-11eb-944c-537ea14ddbe8.png)
+### Code Splitting
 
-    d. Once checkout is completed users will be able to, view and download their bills in a pdf format.
-    
- ![image](https://user-images.githubusercontent.com/84494799/121146973-133a4900-c85e-11eb-8724-d792c0b2dccb.png)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-![image](https://user-images.githubusercontent.com/84494799/121147140-3c5ad980-c85e-11eb-8cbe-f704d057516e.png)
+### Analyzing the Bundle Size
 
-### 4. Users will be able to track statistics like total volume of revenue generated, total bills, total number of customers and products present in the database from the dashboard page.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-![image](https://user-images.githubusercontent.com/84494799/121147633-aa070580-c85e-11eb-8aa0-375cd218f215.png)
+### Making a Progressive Web App
 
-## Teck stack used for building the application:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-React JS (view library).
+### Advanced Configuration
 
-Redux (state management).
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-JavaScript.
+### Deployment
 
-BootStrap (styling CSS framework).
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Backend APIs setuo using Node & Express JS.
+### `npm run build` fails to minify
 
-Heorku (for hosting).
-
-## Third party NPM Packages used in the application for implementing different functionalities:
-
-1.	react-redux.
-2.	react-select.
-3.	sweetalert.
-4.	date-fns.
-5.	reactstrap. 
-6.	validator.
-7.	react-icons. 
-8.	axios.
-9.	react-html2pdf.
-10.	moment.
-11. react-router-dom.
-
-Thanks for reading till the end, hope you like it!!  :)
-
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

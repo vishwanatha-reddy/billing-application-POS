@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React,{useState,useEffect} from 'react';
 
 import SideBar from './components/POS/SideBar/components/SideBar';
-import { BrowserRouter as Router, Link, Switch, Route, withRouter, Redirect } from 'react-router-dom'
+import {BrowserRouter as Router, Link,Switch, Route , withRouter, Redirect} from 'react-router-dom'
 
-const App = (props) => {
-  const [userLoggedIn, setUserLoggedIn] = useState(false);
+const App=(props)=> {
+  const [userLoggedIn,setUserLoggedIn]=useState(false);
 
-  const handleAuth = () => {
+  const handleAuth=()=>{
     setUserLoggedIn(!userLoggedIn);
+ 
   }
 
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
+  useEffect(()=>{
+    if(localStorage.getItem('token')){
       handleAuth();
     }
-  }, [])
+  },[])
 
-  // console.log(userLoggedIn);
+  console.log(userLoggedIn);
   return (
     <Router >
-      <SideBar handleAuth={handleAuth} userLoggedIn={userLoggedIn} />
+       <SideBar handleAuth={handleAuth} userLoggedIn={userLoggedIn} />
     </Router>
   );
 }

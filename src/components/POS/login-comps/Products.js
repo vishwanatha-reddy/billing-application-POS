@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import swal from 'sweetalert';
+import MaterialTable from 'material-table'
 
-import '../dashboard-comps/dash-comps.css';
-import { asyncDeleteProduct, startProductsList } from '../../../actions/productsAction'
+import '../dashboard-comps/dash-comps.css'
+import { asyncDeleteProduct, startProductsList, startUpdateProduct } from '../../../actions/productsAction'
 import { startCreateProduct } from '../../../actions/productsAction'
-import ProductItem from '../../../edit-form/ProductItem'
+
 
 
 const Products = (props) => {
@@ -21,7 +22,7 @@ const Products = (props) => {
         return store.products;
     })
 
-    // console.log(productsData);
+    console.log(productsData);
 
     useEffect(() => {
         dispatch(startProductsList());
@@ -35,6 +36,7 @@ const Products = (props) => {
             setPrice(e.target.value)
         }
     }
+
 
     const clearFields = () => {
         setName('');
@@ -61,7 +63,7 @@ const Products = (props) => {
             setPriceValidate(true);
         }
 
-        // console.log(productInfo);
+        console.log(productInfo);
 
         dispatch(startCreateProduct(productInfo));
 
@@ -75,32 +77,81 @@ const Products = (props) => {
         });
     }
 
-    const handleDelete = (item) => {
-        //sweet alert
-        swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this product data",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
+    //table product delete
+    const handleDelete = (delItem) => {
+        console.log(delItem);
+        const deletedProd = productsData.find((prod) => {
+            return prod.name === delItem.name;
         })
-            .then((willDelete) => {
-                if (willDelete) {
-                    dispatch(asyncDeleteProduct(item._id));
-                    swal("Product has been deleted!", {
-                        icon: "success",
-                    });
-                } else {
-                    swal("Product was not deleted");
-                }
-            })
+        console.log(deletedProd._id);
+        dispatch(asyncDeleteProduct(deletedProd._id));
+        swal("Product has been deleted!", {
+            icon: "success",
+        });
     }
+
+    //table product update
+    const handleProdUpdate = (updatedProdData, oldProdData) => {
+        //  e.preventDefault();
+        const productInfo = {};
+
+        const { name, price } = updatedProdData;
+
+        //product name validation
+        if (name.length >= 3) {
+            productInfo.name = name;
+        }
+
+        //price validation
+        if (price > 0) {
+            productInfo.price = price;
+        }
+
+        console.log(productInfo, oldProdData);
+
+        const updatedProd = productsData.find((prod) => {
+            return prod.name === oldProdData.name;
+        })
+        console.log(updatedProd._id);
+
+        dispatch(startUpdateProduct(productInfo, updatedProd._id));
+
+        // handleToggle();
+
+        swal({
+            title: "Product info updated!",
+            // text: "You clicked the button!",
+            icon: "success",
+            // button: "Aww yiss!",
+        });
+    }
+
+
+    //material table
+    const materialTableData = productsData.map((item) => {
+        return {
+            name: item.name,
+            price: item.price
+        }
+    });
+
+
+    //columns
+    const columns = [
+        {
+            title: 'Product Name', field: 'name'
+        },
+        {
+            title: 'Product Price ($)', field: 'price'
+        },
+    ]
+
 
 
     return (
         <div className="container ">
             <div className="row ">
-                <div className="col-md-10 text-center mt-5 ">
+                <div className="col-md-9 offset-md-1   text-center mt-5 ">
                     <h2 >Add products</h2>
                     <form onSubmit={handleSubmit} className="border w-75 border-dark shadow-lg p-3 mb-5 bg-white rounded" style={{ marginLeft: '10rem' }}>
                         <div className="mb-3 mx-2 my-4 d-inline-block" >
@@ -126,10 +177,10 @@ const Products = (props) => {
                     <div className="d-flex justify-content-center">
                         <h3 style={{ marginLeft: '2rem' }}>Existing Products</h3 >
                     </div>
-                    {productsData.length > 0 ? (
-
-                        <div className="table-responsive " id="list">
-                            <table className="table  border border-dark table-striped table-hover w-75 shadow-lg p-3 mb-5  rounded" style={{ marginLeft: '10rem', width: '40rem', backgroundColor: '#7395AE' }} >
+                    {/* { productsData.length>0 ?(
+                       
+                           <div className="table-responsive ">
+                                <table className="table  border border-dark table-striped table-hover w-75 shadow-lg p-3 mb-5  rounded" style={{marginLeft:'10rem',width:'40rem',backgroundColor:'#7395AE'}} >
                                 <thead>
                                     <tr>
                                         <th scope="col">Product Name</th>
@@ -140,18 +191,66 @@ const Products = (props) => {
                                 </thead>
                                 <tbody>
                                     {
-                                        productsData.map((item) => {
-                                            return <ProductItem handleDelete={handleDelete} handleSubmit={handleSubmit} item={item} key={item._id} />
+                                        productsData.map((item)=>{
+                                            return <ProductItem handleDelete={handleDelete} handleSubmit={handleSubmit} item={item} key={item._id}/>
                                         })
                                     }
                                 </tbody>
                             </table>
-                        </div>
+                           </div>
+                        
+                        ):(
+                            <h2>No Products found</h2>
+                        )
+                    } */}
+                </div>
+                <div className="row">
+                    <div className="d-none d-lg-block col-md-8 offset-md-2 ">
+                        <MaterialTable title="Products"
+                            data={materialTableData}
+                            columns={columns}
+                            onRowClick={(event,rowData)=>{
+                                console.log(rowData);
+                            }
 
-                    ) : (
-                        <h2>No Products found</h2>
-                    )
-                    }
+                            }
+
+                            editable={{
+                                onRowDelete: selectedRow => new Promise((resolve, reject) => {
+                                    setTimeout(() => {
+                                        handleDelete(selectedRow);
+                                        resolve();
+                                    }, 2000)
+                                }),
+                                onRowUpdate: (updatedRow, oldRow) => new Promise((resolve, reject) => {
+                                    setTimeout(() => {
+                                        handleProdUpdate(updatedRow, oldRow);
+                                        resolve();
+                                    }, 2000)
+                                }),
+                                //  onRowClick: (event, RowData) => new Promise((resolve, reject) => {
+                                //     setTimeout(() => {
+                                //         // handleProdUpdate(updatedRow, oldRow);
+                                //         console.log(RowData);
+                                //         resolve();
+                                //     }, 2000)
+                                // })
+                            }}
+                            options={{
+                                filtering: false,
+                                exportButton: true,
+                                actionsColumnIndex: 2,
+                                
+                                headerStyle: {
+                                    backgroundColor: '#01579b',
+                                    color: '#FFF'
+                                },
+                                rowStyle: {
+                                    backgroundColor: '#EEE',
+                                },
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

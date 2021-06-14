@@ -1,15 +1,15 @@
 import React,{useState} from 'react';
 import {useSelector,useDispatch} from 'react-redux'
+import { asyncLoginUser } from '../../actions/loginAction';
 import validator from 'validator';
+import Dashboard from './Dashboard';
 import { Link,Switch, Route , withRouter, Redirect} from 'react-router-dom';
-
-import { asyncLoginUser } from '../../actions/loginAction';
-import { asyncLoginUser } from '../../actions/loginAction';
 
 const Login=(props)=>{
     
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
+
     const [emailValidate,setEmailValidate]=useState(false);
     const [pwdValidate,setPwdValidate]=useState(false);
     
