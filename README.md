@@ -1,8 +1,8 @@
 # Project Overview
 
-## Title: Movie Reviewer
+## Title: Billing Application (POS)
 
-Movie Reviewer is a web application built using React and Redux, where user can enter a movie and its rating witha scale of 1-10. The entered movies can be sorted using rating and movie names.
+Billing Application (POS) is a React-Redux web application built for Desktop first to handle billing and sales for e-commerce stores, physical stores and many more from the same category.
 
 Application Demo (live link): https://top-movies-rating.herokuapp.com/
 
