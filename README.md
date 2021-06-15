@@ -29,11 +29,29 @@ Pagination is available in the Material UI table with search feature.
 ![image](https://user-images.githubusercontent.com/84494799/122004157-ac72dd80-cdd1-11eb-99bb-e1f6c775ce0e.png)
 
 
-### 3. Best Movie Stat:
+### 3. Customers:
 
-Application displays the name and rating of the top rated movie added into the application, so far.
+User can add/update and delete customer details under this component.
 
-![image](https://user-images.githubusercontent.com/84494799/121174743-df6c1d00-c877-11eb-8d70-c8f04579006b.png)
+Pagination is available in the Material UI table with search feature.
+
+![image](https://user-images.githubusercontent.com/84494799/122004844-8ac62600-cdd2-11eb-8be5-7a72d855afcc.png)
+
+The table data can be downloaded in Pdf and Excel format:
+
+![image](https://user-images.githubusercontent.com/84494799/122004995-b9dc9780-cdd2-11eb-94f2-11a0e3f44c70.png)
+
+![image](https://user-images.githubusercontent.com/84494799/122005269-0e801280-cdd3-11eb-8ad3-5776889810c5.png)
+
+
+Pdf format:
+
+![image](https://user-images.githubusercontent.com/84494799/122005065-cc56d100-cdd2-11eb-9c82-010265805259.png)
+
+Excel CSV format:
+
+![image](https://user-images.githubusercontent.com/84494799/122005408-38d1d000-cdd3-11eb-97d5-7aa0c93e7fc7.png)
+
 
 ### 4. Users will be able to serach for a specific movie, via the search field, which will perform a filter operation and display the matching movie to the text entered:
 
