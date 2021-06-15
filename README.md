@@ -53,9 +53,12 @@ Excel CSV format:
 ![image](https://user-images.githubusercontent.com/84494799/122005408-38d1d000-cdd3-11eb-97d5-7aa0c93e7fc7.png)
 
 
-### 4. Users will be able to serach for a specific movie, via the search field, which will perform a filter operation and display the matching movie to the text entered:
+### 4. Billing
 
-![image](https://user-images.githubusercontent.com/84494799/121174993-31ad3e00-c878-11eb-9b34-3ffa376071dd.png)
+Users will be able to create bills by adding items to the cart:
+
+![image](https://user-images.githubusercontent.com/84494799/122006017-f0ff7880-cdd3-11eb-851b-0d96a4169dd4.png)
+
 
 ### 5. Movies will be removable using the delete button, present at the bottom right corner of each movie card.
 
