@@ -8,6 +8,11 @@ Application Demo (live link): https://billing-application-POS.herokuapp.com/
 
 Plesae use the credentials provided on the Home page to login to the application via Login page.
 
+credentials:
+
+Email: vreddym@gmail.com  
+password: vreddym@123
+
 ![image](https://user-images.githubusercontent.com/84494799/121934778-5bc59b00-cd65-11eb-9195-34f5bf3976bc.png)
 
 
@@ -60,13 +65,18 @@ Users will be able to create bills by adding items to the cart:
 ![image](https://user-images.githubusercontent.com/84494799/122006017-f0ff7880-cdd3-11eb-851b-0d96a4169dd4.png)
 
 
-### 5. Movies will be removable using the delete button, present at the bottom right corner of each movie card.
+### 5. Users can search bills via bill date or bill total value.
 
-![image](https://user-images.githubusercontent.com/84494799/121175276-80f36e80-c878-11eb-9dce-172ef0fc3ffc.png)
+![image](https://user-images.githubusercontent.com/84494799/122008852-1b9f0080-cdd7-11eb-9d2d-11ccc1673489.png)
 
-### 6. Users will be able to sort these movies alphabatically by their name / ascending & descending order of the movie rating:
+![image](https://user-images.githubusercontent.com/84494799/122009240-80f2f180-cdd7-11eb-8a7f-42df452a847e.png)
 
-![image](https://user-images.githubusercontent.com/84494799/121176035-6241a780-c879-11eb-8daa-bb1a0db32abb.png)
+
+
+### 6. Users will be able to view bills and download them in pdf format:
+
+![image](https://user-images.githubusercontent.com/84494799/122009738-ffe82a00-cdd7-11eb-9165-4766f45d2e67.png)
+
 
 ## Tech Stack used for building the application::
 
@@ -78,17 +88,25 @@ JavaScript.
 
 BootStrap (styling CSS framework).
 
+Material UI (styling CSS framework).
 
 Heorku (for hosting).
 
 ## Third party NPM Packages used in the application for implementing different functionalities:
 
 1.	react-redux.
-2.	react-select.
-3.	material UI.
-4.	react-router-dom.
-5.	
-6.	
+2.	redux.
+3.	react-select.
+4.	material-table.
+5.	react-router-dom.
+6.	axios.
+7.	chart.js.
+8.	moment.
+9.	reactstrap.
+10.	sweetalert.
+11.	react-html2pdf.
+12.	validator.
+13.	react-select.
 
 Thanks for reading till the end, hope you like it!!  :)
 
