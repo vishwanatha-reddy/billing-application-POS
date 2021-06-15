@@ -20,11 +20,14 @@ Logged In users will land on dashboard component, which has different card compo
 ![image](https://user-images.githubusercontent.com/84494799/122003409-ad573f80-cdd0-11eb-9b02-24fc99c463dd.png)
 
 
-### 2. Movies listing:
+### 2. Products:
 
-Movies that are added will be displayed in the centre of the application.
+User can add/update and delete product details under this component.
 
-![image](https://user-images.githubusercontent.com/84494799/121174468-93b97380-c877-11eb-82e7-3dbf58f30e47.png)
+Pagination is available in the Material UI table with search feature.
+
+![image](https://user-images.githubusercontent.com/84494799/122004157-ac72dd80-cdd1-11eb-99bb-e1f6c775ce0e.png)
+
 
 ### 3. Best Movie Stat:
 
