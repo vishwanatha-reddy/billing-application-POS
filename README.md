@@ -92,6 +92,8 @@ Material UI (styling CSS framework).
 
 Heorku (for hosting).
 
+APIs (3rd party open source APIs for Products, Customers, Bills CRUD operations).
+
 ## Third party NPM Packages used in the application for implementing different functionalities:
 
 1.	react-redux.
