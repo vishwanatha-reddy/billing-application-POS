@@ -33,6 +33,14 @@ Pagination is available in the Material UI table with search feature.
 
 ![image](https://user-images.githubusercontent.com/84494799/122004157-ac72dd80-cdd1-11eb-99bb-e1f6c775ce0e.png)
 
+## Inline record edit feature:
+
+![image](https://user-images.githubusercontent.com/84494799/122155113-ebfa0200-ce83-11eb-81e4-4995c2ae7bf9.png)
+
+## Record removal confirmation:
+
+![image](https://user-images.githubusercontent.com/84494799/122155254-38454200-ce84-11eb-9e99-a07aa02e3515.png)
+
 
 ### 3. Customers:
 
