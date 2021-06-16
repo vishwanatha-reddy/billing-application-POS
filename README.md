@@ -13,7 +13,7 @@ credentials:
 Email: vreddym@gmail.com  
 password: vreddym@123
 
-![image](https://user-images.githubusercontent.com/84494799/121934778-5bc59b00-cd65-11eb-9195-34f5bf3976bc.png)
+![image](https://user-images.githubusercontent.com/84494799/122163328-a2fd7a00-ce92-11eb-9e06-b44216ba93c5.png)
 
 
 ### Features:
