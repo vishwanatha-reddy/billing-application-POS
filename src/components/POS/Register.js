@@ -93,7 +93,7 @@ const Register=(props)=> {
     }
 
     return (
-        <div className="container">
+        <div className="container mt-5">
             <div className="row ">
                 <div className="col-md-10  text-center ">
                     <div className="mx-4">

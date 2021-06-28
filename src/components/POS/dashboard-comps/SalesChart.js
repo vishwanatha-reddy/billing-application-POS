@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Bar } from 'react-chartjs-2'
 import { useSelector } from 'react-redux';
+import moment from 'moment'
 
 const SalesChart = () => {
 
@@ -8,24 +9,38 @@ const SalesChart = () => {
         return store.bills;
     })
 
-      const monthSale=(month)=>{
-        let sales=0;
-        totalSales.forEach((bill)=>{
-            if(bill.date.includes(month)){
-                sales+= bill.total;
+
+    const monthlySale = (month) => {
+        let sales = 0;
+        totalSales.forEach((bill) => {
+            if (bill.date.includes(month)) {
+                sales += bill.total;
             }
         })
         return sales;
     }
+
+    const yearlyRevenue = () => {
+        const result = [];
+        for (let i = 1; i <= moment.monthsShort().length; i++) {
+            if (i <= 9) {
+                result.push(monthlySale(`-0${i}-`))
+            } else{
+                result.push(monthlySale(`-${i}-`))
+            } 
+        }
+        return result;
+    }
+
     return (
         <div>
             <Bar
                 data={{
-                    labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    labels: moment.monthsShort(),
                     datasets: [
                         {
                             label: 'Total Monthly Sales',
-                            data: [monthSale('-01-'), monthSale('-02-'), monthSale('-03-'), monthSale('-04-'), monthSale('-05-'), monthSale('-06-'), monthSale('-07-'), monthSale('-08-'), monthSale('-09-'), monthSale('-10-'), monthSale('-11-'), monthSale('-12-')],
+                            data: yearlyRevenue(),
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',

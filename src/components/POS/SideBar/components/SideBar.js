@@ -31,10 +31,10 @@ const SideBar=(props)=> {
      {userLoggedIn?(
          <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
+          <Link to='#' className='menu-bars menu-word'>
+            <FaIcons.FaBars onClick={showSidebar} /> <h3 className="d-inline menu-word" > Menu</h3>
           </Link>    
-              <h3 style={{color:'white',marginLeft:'33%'}} >POS - Billing application</h3>
+              <h3 style={{color:'white',marginLeft:'33%'}}  >POS - Billing Application</h3>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
@@ -141,11 +141,9 @@ const SideBar=(props)=> {
           {/* <ProtectedRoute path="/products" component={Products} userLoggedIn={userLoggedIn}/>
           <ProtectedRoute path="/customers" component={Customers} userLoggedIn={userLoggedIn}/> */}
             {/* <Route path='*' component={()=><h1>404 NOT FOUND</h1>}/> */}
-            <Route path='*'> <Redirect to="notfound"/></Route>
+            <Route path='*'><Redirect to="notfound"/></Route>
         </Switch>
     </div>
-
-    
   );
 }
 

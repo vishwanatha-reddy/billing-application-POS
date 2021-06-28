@@ -1,11 +1,11 @@
 import React from 'react'
+import './Home.css'
 
-
-const Home=(props)=> {
+const Home = (props) => {
     return (
-        <div className="container ">
-           
-            <div className="row">
+        <div className="container " >
+     
+             <div className="row">
                 <div className="col-md-10 offset-2 ">
                     
             <div className="jumbotron jumbotron-fluid border border-dark m-5 py-5 px-3 rounded bg-success text-white" style={{width:'80%',backgroundColor:'red'}}>
@@ -17,15 +17,20 @@ const Home=(props)=> {
             </div>
             </div>
             <div className="row ">
-                <div className="col-6 offset-3 text-center justify-content-center">
-                    <h3 className="mt-5">Credentials to sign into application</h3>
-                    <div>
-                        <h4 className="d-inline">Email id</h4> - <h5 className="d-inline">vreddym@gmail.com</h5>
+                <div className="col-4 offset-4 text-center text-white justify-content-center">
+
+                    <div className="card text-center">
+                        <div className="card-header bg-dark text-white h3">Login Credentials</div>
+                        <div className="card-body text-dark">
+                            <h5 className="card-title">Email id : vreddym@gmail.com </h5>
+                            <h5 className="card-title">Password : vreddym@123 </h5>
+                            <p className="card-text ">
+                                Please navigate to the Login page, and enter above credentials to explore the application
+                            </p>
+                            
+                        </div>
+                        <div className="card-footer bg-dark text-dark">I</div>
                     </div>
-                    <div>
-                        <h4 className="d-inline">Password</h4> - <h5 className="d-inline" >vreddym@123</h5>
-                    </div>
-                    <h5 className="mt-3">Please navigate to the Login page, and enter above credentials to explore the application.</h5>
                 </div>
             </div>
         </div>

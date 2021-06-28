@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 
 import SideBar from './components/POS/SideBar/components/SideBar';
+
 import {BrowserRouter as Router, Link,Switch, Route , withRouter, Redirect} from 'react-router-dom'
 
 const App=(props)=> {
@@ -21,6 +22,7 @@ const App=(props)=> {
   return (
     <Router >
        <SideBar handleAuth={handleAuth} userLoggedIn={userLoggedIn} />
+       {userLoggedIn && <Redirect to="/dashboard"/>}
     </Router>
   );
 }

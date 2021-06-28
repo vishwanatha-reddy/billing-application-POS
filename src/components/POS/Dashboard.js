@@ -36,7 +36,7 @@ const Dashboard=(props)=> {
             <div className="container py-5">
                 <div className="row">
                 {/* <div className="col-sm-4 col-md-8 col-lg-8 col-xl-8 text-center offset-sm-6 offset-md-4 offset-lg-4 offset-xl-4"> */}
-                  <div className=" offset-md-2 col-md-3 mt-3  cardPosition">
+                  <div className=" offset-md-2 col-md-3 mt-3 cardPosition pr-2">
                       <TotalSales bills={bills} />
                   </div>
                   {/* <MonthlyRevenue bills={bills}className="col-md-3"/> */}

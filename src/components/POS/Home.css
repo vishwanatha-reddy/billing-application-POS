@@ -1,0 +1,14 @@
+.h1{
+  font-size: 5em;
+  font-weight: 800;
+  color: rgb(37, 28, 28);
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+
+.spinner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}

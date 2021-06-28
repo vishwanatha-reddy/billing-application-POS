@@ -1,4 +1,5 @@
  import axios from 'axios'
+ import swal from 'sweetalert';
  
  //start or async for action creators responsible for api call
 
@@ -16,23 +17,27 @@
 //      }
 //  }
 
-export const asyncLoginUser=(formData,handleHomeRedirect)=>{
+export const asyncLoginUser=(formData,handleHomeRedirect, handleSpinner,invalidCredRedirect)=>{
     return (dispatch)=>{
         axios.post('https://dct-billing-app.herokuapp.com/api/users/login',formData)
             .then((res)=>{
                 const result=res.data;
-                if(result.hasOwnProperty('errors')){
-                    alert(result.errors);   
+                if(result.hasOwnProperty('errors')){ 
+                    // alert(result.errors);
+                    swal(`${result.errors}`);
+                    invalidCredRedirect();
                 }else{
                     console.log('successfully logged in ');
+                    handleSpinner();
                     localStorage.setItem('token',result.token);
                     handleHomeRedirect();
                 }
             })
             .catch((err)=>{
                 console.log(err.message);
+                handleSpinner();  
             })
-    }
+    } 
 }
 
  

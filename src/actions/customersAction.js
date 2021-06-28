@@ -17,7 +17,6 @@ export const startCustomerList=()=>{
                     dispatch(setCustomerList(result))
                     // console.log(result,'user info action');
                     // handleLoginRedirect();
-                   
                 }
             })
             .catch((err)=>{

@@ -24,7 +24,6 @@ const NavBar=(props)=> {
           {/* <a className="nav-link active" aria-current="page" href="#">Home</a> */}
                       <Link className="nav-link active" style={{color:'#f5f5f5',fontSize:'1.2rem'}} to="/">Home</Link>
                     </li>
-        
                         <li className="nav-item">
                           <Link className="nav-link active" style={{color:'#f5f5f5',fontSize:'1.2rem'}} to="/register">Register</Link>
                         </li>
@@ -55,7 +54,7 @@ const NavBar=(props)=> {
               <Route path="/profile" component={Profile} exact={true}/>
               <Route path="/dashboard" component={Dashboard} exact={true}/>
 
-              <ProtectedRoute path="/dashboard" component={Dashboard} userLoggedIn={userLoggedIn}/>
+              {/* <ProtectedRoute path="/dashboard" component={Dashboard} userLoggedIn={userLoggedIn}/> */}
               <Route path="*" component={()=><h1>404 NOT FOUND</h1>}/>
               </Switch>
 
